@@ -26,41 +26,13 @@ export default function SideBar() {
             <hr className="w-[80%] my-2 border-white" />
             {/* Links */}
             <div className="flex flex-col w-[80%] mt-[20px]">
-              <SidebarItem
-                title={"DashBoard"}
-                path={"/Dash"}
-                icon={<LuFileText size={25} />}
-              />
-              <SidebarItem
-                title={"Transactions"}
-                path={"/Transactions"}
-                icon={<LuRepeat2 size={25} />}
-              />
-              <SidebarItem
-                title={"Products"}
-                path={"/Products"}
-                icon={<LuShoppingBag size={25} />}
-              />
-              <SidebarItem
-                title={"Students"}
-                path={"/Students"}
-                icon={<LuUsers size={25} />}
-              />
-              <SidebarItem
-                title={"Schedule"}
-                path={"/Schedule"}
-                icon={<LuCalendarSearch size={25} />}
-              />
-              <SidebarItem
-                title={"Team"}
-                path={"/Team"}
-                icon={<LuClipboardList size={25} />}
-              />
-              <SidebarItem
-                title={"fleet"}
-                path={"/Fleet"}
-                icon={<PiGarage size={25} />}
-              />
+              <SidebarItem title={"DashBoard"} path={"/Dash"} icon={<LuFileText size={25} />}/>
+              <SidebarItem title={"Transactions"} path={"/Transactions"} icon={<LuRepeat2 size={25} />}/>
+              <SidebarItem title={"Products"} path={"/Products"} icon={<LuShoppingBag size={25} />} />
+              <SidebarItem title={"Drivers"} path={"/Students"} icon={<LuUsers size={25} />}/>
+              <SidebarItem title={"Schedule"} path={"/Schedule"} icon={<LuCalendarSearch size={25} />} />
+              <SidebarItem title={"Team"} path={"/Team"} icon={<LuClipboardList size={25} />} />
+              <SidebarItem title={"fleet"} path={"/Fleet"} icon={<PiGarage size={25} />} />
             </div>
           </div>
         </div>
