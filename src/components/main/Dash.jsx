@@ -14,32 +14,21 @@ export default function Dash() {
         </div>
         <div className="flex justify-between h-full ">
           {/* First Section */}
-          <div className=" w-[60%]">
-            <div className="flex w-[100%] ">
-              <SmDashTile
-                title={"Enrollment"}
-                icon={<LuShoppingCart size={30} />}
-                figure={"750"}
-                percentage={"10%"}
-              />
-              <SmDashTile
-                title={"Revenue"}
-                icon={<BsCashCoin size={30} />}
-                figure={"R16,240"}
-                percentage={"25%"}
-              />
-              <SmDashTile
-                title={"Students"}
-                icon={<LuUsers2 size={30} />}
-                figure={"250"}
-                percentage={"5%"}
-              />
+          <div className=" w-[60%] ring-1 ring-black">
+            <div className="flex flex-row justify-around w-[100%] ">
+              <SmDashTile title={"Enrollment"} icon={<LuShoppingCart size={30} />} figure={"750"} percentage={"10%"} />
+              <SmDashTile title={"Revenue"} icon={<BsCashCoin size={30} />} figure={"R16,240"} percentage={"25%"} />
+              <SmDashTile title={"Students"} icon={<LuUsers2 size={30} />} figure={"250"} percentage={"5%"} />
             </div>
-            <div className="flex justify-center ">
-              <MainChart />
-            </div>
+            <div className="flex flex-row items-center justify-center w-full h-[70%] ">
+              <div className="flex justify-center  h-[90%] w-[90%] ">
+                  <MainChart />
+                </div>
+              </div>
           </div>
-          <div className="w-[38%] ring "> Second </div>
+          <div className="w-[38%] ring ">
+             Second 
+             </div>
         </div>
       </div>
     </div>

@@ -64,20 +64,7 @@ class MainChart extends React.Component {
           },
         },
         xaxis: {
-          categories: [
-            "01 Jan",
-            "02 Jan",
-            "03 Jan",
-            "04 Jan",
-            "05 Jan",
-            "06 Jan",
-            "07 Jan",
-            "08 Jan",
-            "09 Jan",
-            "10 Jan",
-            "11 Jan",
-            "12 Jan",
-          ],
+          categories: [ "01 Jan", "02 Jan", "03 Jan", "04 Jan", "05 Jan", "06 Jan", "07 Jan", "08 Jan", "09 Jan", "10 Jan", "11 Jan", "12 Jan" ],
         },
         tooltip: {
           y: [
@@ -113,14 +100,9 @@ class MainChart extends React.Component {
 
   render() {
     return (
-      <div className="bg-white rounded-2xl p-4 w-[630px] mt-2">
+      <div className="bg-white rounded-2xl p-4 w-full h-full mt-2">
         <div id="chart">
-          <ReactApexChart
-            options={this.state.options}
-            series={this.state.series}
-            type="line"
-            height={350}
-          />
+          <ReactApexChart options={this.state.options} series={this.state.series} type="line" height={350} />
         </div>
         <div id="html-dist"></div>
       </div>
