@@ -14,7 +14,7 @@ export default function Dash() {
         </div>
         <div className="flex justify-between h-full ">
           {/* First Section */}
-          <div className=" w-[60%] ring-1 ring-black">
+          <div className=" w-[60%]">
             <div className="flex flex-row justify-around w-[100%] ">
               <SmDashTile title={"Enrollment"} icon={<LuShoppingCart size={30} />} figure={"750"} percentage={"10%"} />
               <SmDashTile title={"Revenue"} icon={<BsCashCoin size={30} />} figure={"R16,240"} percentage={"25%"} />
