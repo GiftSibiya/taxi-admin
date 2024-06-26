@@ -39,17 +39,8 @@ export default function SideBar() {
         {/* System */}
         <div className=" w-[80%]">
           <hr className="w-[80%] my-2 border-white" />
-          <SidebarItem
-            title={"Settings"}
-            path={"/Settings"}
-            icon={<LuSettings size={25} />}
-          />
-
-          <SidebarItem
-            title={"Help"}
-            path={"/Help"}
-            icon={<LuHelpCircle size={25} />}
-          />
+          <SidebarItem title={"Settings"} path={"/Settings"} icon={<LuSettings size={25} />} />
+          <SidebarItem title={"Help"} path={"/Help"} icon={<LuHelpCircle size={25} />} />
         </div>
       </div>
     </div>

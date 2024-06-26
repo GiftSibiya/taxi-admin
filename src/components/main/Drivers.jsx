@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import StudentsTable from "../students/StudentsTable";
 import CreateStudentPop from "../students/CreateStudentPop";
 
-export default function Students() {
+export default function Drivers() {
   const [studentCreatePop, setStudentPopup] = useState(false);
 
   const handleStudentCreate = () => {

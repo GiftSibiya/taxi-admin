@@ -10,7 +10,7 @@ import SideBar from "./components/SideBar";
 
 // Main Pages
 import Dash from "./components/main/Dash";
-import Students from "./components/main/Students";
+import Drivers from "./components/main/Drivers";
 import Schedule from "./components/main/Schedule";
 import Team from "./components/main/Team";
 import Fleet from "./components/main/Fleet";
@@ -35,7 +35,7 @@ function App() {
             <Route path="/Team" element={<Team />} />
             <Route path="/Dash" element={<Dash />} />
             <Route path="/Transactions" element={<Transactions />} />
-            <Route path="/Students" element={<Students />} />
+            <Route path="/Students" element={<Drivers />} />
             <Route path="/Products" element={<Products />} />
             <Route path="/Fleet" element={<Fleet />} />
             <Route path="/Profile" element={<Profile />} />
