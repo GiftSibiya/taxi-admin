@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import SmDashTile from "../utils/SmDashTile";
 import { LuShoppingCart } from "react-icons/lu";
 import { BsCashCoin } from "react-icons/bs";
 import { LuUsers2 } from "react-icons/lu";
 import MainChart from "../dash/MainChart";
+import Calendar from 'react-calendar';
+
 
 export default function Dash() {
+  const [value, onChange] = useState(new Date());
   return (
     <div className=" flex flex-col items-center w-full bg-gray-200 h-full rounded-tl-2xl ">
       <div className="flex flex-col h-full w-[95%]  ">
@@ -14,7 +17,7 @@ export default function Dash() {
         </div>
         <div className="flex justify-between h-full ">
           {/* First Section */}
-          <div className=" w-[60%] ring-1 ring-black">
+          <div className=" w-[60%] ">
             <div className="flex flex-row justify-around w-[100%] ">
               <SmDashTile title={"Enrollment"} icon={<LuShoppingCart size={30} />} figure={"750"} percentage={"10%"} />
               <SmDashTile title={"Revenue"} icon={<BsCashCoin size={30} />} figure={"R16,240"} percentage={"25%"} />
@@ -27,8 +30,10 @@ export default function Dash() {
               </div>
           </div>
           <div className="w-[38%] ring ">
-             Second 
-             </div>
+            <div className="bg-slate-50 p-5 h-[300px] rounded-[30px]">
+              <Calendar onChange={onChange} value={value} showWeekNumbers={true}  />
+            </div>
+          </div>
         </div>
       </div>
     </div>

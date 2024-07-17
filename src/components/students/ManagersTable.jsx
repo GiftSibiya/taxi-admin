@@ -45,7 +45,7 @@ const data = [
   },
 ];
 
-const StudentsTable = () => {
+const ManagersTable = () => {
   const [studentPopup, setStudentPopup] = useState(false);
 
   const handleStudentPopUp = () => {
@@ -131,4 +131,4 @@ const StudentsTable = () => {
   );
 };
 
-export default StudentsTable;
+export default ManagersTable;
