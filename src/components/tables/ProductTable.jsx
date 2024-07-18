@@ -100,7 +100,7 @@ const ProductTable = () => {
           ProductPopup ? "absolute z-[100]" : "hidden"
         } top-[60px] left-[20%]`}
       >
-        <ProductPopUp setProductPopup={setProductPopup} />
+        {/* <ProductPopUp setProductPopup={setProductPopup} /> */}
       </div>
     </>
   );

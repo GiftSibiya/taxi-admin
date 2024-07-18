@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import CreateStudentPop from "../students/CreateStudentPop";
-import VehicleTable from "../students/VehicleTable";
+import VehicleTable from "../tables/VehicleTable";
+import CreateVehicleModal from "../modals/create/CreateVehicleModal";
 
 export default function Vehicles() {
-  const [vehicleCreatePop, setVehiclePopup] = useState(false);
+  const [createVehicleModal, setCreateVehicleModal] = useState(false);
 
   const handleVehicleCreate = () => {
-    setVehiclePopup(true);
+    setCreateVehicleModal(true);
   };
   return (
     <div className="flex flex-col items-center bg-gray-200 h-full rounded-tl-2xl">
@@ -22,9 +22,9 @@ export default function Vehicles() {
       </div>
       <div
         className={`${
-          vehicleCreatePop ? "absolute z-[100]" : "hidden"
+          createVehicleModal ? "absolute z-[100]" : "hidden"
         } top-[60px] left-[20%]`}>
-        <CreateStudentPop setStudentCreate={setVehiclePopup} />
+        < CreateVehicleModal setCreateVehicleModal={setCreateVehicleModal} />
       </div>
     </div>
   );

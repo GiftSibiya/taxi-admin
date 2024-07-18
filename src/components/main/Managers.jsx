@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import CreateStudentPop from "../students/CreateStudentPop";
-import ManagersTable from "../students/ManagersTable";
+import ManagersTable from "../tables/ManagersTable";
+import CreateManagerModal from "../modals/create/CreateManagerModal";
 
 export default function Managers() {
-  const [studentCreatePop, setStudentPopup] = useState(false);
+  const [createManagerModal, setCreateManagerModal] = useState(false);
 
   const handleStudentCreate = () => {
-    setStudentPopup(true);
+    setCreateManagerModal(true);
   };
   return (
     <div className="flex flex-col items-center bg-gray-200 h-full rounded-tl-2xl">
@@ -18,14 +18,14 @@ export default function Managers() {
         </button>
       </div>
       <div className="w-[95%]">
-        <ManagersTable />
+        <ManagersTable  />
       </div>
       <div
         className={`${
-          studentCreatePop ? "absolute z-[100]" : "hidden"
+          createManagerModal ? "absolute z-[100]" : "hidden"
         } top-[60px] left-[20%]`}
       >
-        <CreateStudentPop setStudentCreate={setStudentPopup} />
+        <CreateManagerModal setCreateManagerModal={setCreateManagerModal} />
       </div>
     </div>
   );

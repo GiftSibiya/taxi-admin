@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import CreateProduct from "../products/CreateProductPop";
-import ProductTable from "../products/ProductTable";
 
 export default function Finance() {
   const [productCreate, setProductCreate] = useState(false);

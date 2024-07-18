@@ -4,80 +4,81 @@ import {
   MRT_ActionMenuItem,
   useMaterialReactTable,
 } from "material-react-table";
-import StudentPopUp from "./StudentPopUp";
 
-//nested data is ok, see accessorKeys in ColumnDef below
+// Components
+import ManagerModal from "../modals/detail/ManagerModal";
+
 const data = [
   {
-    status: "Available",
-    plate_number: "CLK 121 GP ",
-    detail: "Toyota Quantum",
-    driver: "John Piri",
-    km: "283 862 KM",
+    fullName: "John Doe ",
+    address: "261 Erdman Ford",
+    license: "Code 10 PrDP",
+    date: "12/12/2023",
+    status: "Passed",
   },
   {
-    status: "Busy",
-    plate_number: "VDB 234 MP",
-    detail: "Toyota Quantum",
-    driver: "Not Assigned ",
-    km: "328 127 KM",
+    fullName: "Jane Doe",
+    address: "769 Dominic Grove",
+    license: "Code 10",
+    date: "10/12/2023",
+    status: "Learners Training",
   },
   {
-    status: "Busy",
-    plate_number: "GBC 281 GP",
-    detail: "Toyota Siyaya",
-    driver: "Simon Ndoda",
-    km: "190 872 KM",
+    fullName: "Joe Doe",
+    address: "566 Brakus Inlet",
+    license: "Code 10 PrDP",
+    date: "10/10/2023",
+    status: "Failed",
   },
   {
-    status: "Available",
-    plate_number: "RFO 967 GP",
-    detail: "Toyota Quantum",
-    driver: "Not Assigned ",
-    km: "234 762 KM",
+    fullName: "Kevin Vandy ",
+    address: "722 Emie Stream",
+    license: "Code 8 ",
+    date: "05/12/2023",
+    status: "Passed",
   },
   {
-    status: "Busy",
-    plate_number: "CHE 862 GP",
-    detail: "Toyota Siyaya",
-    driver: "Steve Kekana",
-    km: "172 722 KM",
+    fullName: "Joshua Rolluffs",
+    address: "32188 Larkin Turnpike",
+    license: "Code 10 ",
+    date: "01/12/2023",
+    status: "Driving Training",
   },
 ];
 
-const VehicleTable = () => {
-  const [studentPopup, setStudentPopup] = useState(false);
+const ManagersTable = () => {
+  const [managerModal, setManagerModal] = useState(false);
 
   const handleStudentPopUp = () => {
-    setStudentPopup(true);
+    setManagerModal(true);
     console.log("popup is Opened");
   };
   //should be memoized or stable
   const columns = useMemo(
     () => [
       {
-        accessorKey: "status",
-        header: "Status",
+        accessorKey: "fullName",
+        header: "Full Name",
         size: 100,
       },
       {
-        accessorKey: "plate_number",
-        header: "Plate Number",
+        accessorKey: "date",
+        header: "Enrolled Date",
         size: 100,
       },
       {
-        accessorKey: "km",
-        header: "Milage",
-        size: 100,
-      },
-      {
-        accessorKey: "detail",
-        header: "Detail",
+        accessorKey: "address",
+        header: "Address",
         size: 200,
       },
       {
-        accessorKey: "driver",
-        header: "Driver",
+        accessorKey: "license",
+        header: "License Type",
+        size: 100,
+      },
+      {
+        accessorKey: "status",
+        header: "Status",
         size: 100,
       },
     ],
@@ -122,13 +123,13 @@ const VehicleTable = () => {
       />
       <div
         className={` ${
-          studentPopup ? "absolute z-[100]" : "hidden"
+          managerModal ? "absolute z-[100]" : "hidden"
         } top-[60px] left-[20%]`}
       >
-        <StudentPopUp setStudentPopup={setStudentPopup} />
+        < ManagerModal setManagerModal={setManagerModal} />
       </div>
     </>
   );
 };
 
-export default VehicleTable;
+export default ManagersTable;
