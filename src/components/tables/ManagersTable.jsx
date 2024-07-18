@@ -124,8 +124,7 @@ const ManagersTable = () => {
       <div
         className={` ${
           managerModal ? "absolute z-[100]" : "hidden"
-        } top-[60px] left-[20%]`}
-      >
+        } top-[60px] left-[20%]`}>
         < ManagerModal setManagerModal={setManagerModal} />
       </div>
     </>

@@ -1,9 +1,10 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import {
   MaterialReactTable,
   MRT_ActionMenuItem,
   useMaterialReactTable,
 } from "material-react-table";
+import DriverModal from "../modals/detail/DriverModal";
 
 //nested data is ok, see accessorKeys in ColumnDef below
 const data = [
@@ -44,7 +45,12 @@ const data = [
   },
 ];
 
-const TransactionTable = () => {
+const DriverTable = () => {
+  const [driverModal, setDriverModal] = useState(false)
+  
+  const handleDriverModal = () => {
+    setDriverModal(true)
+  }
   //should be memoized or stable
   const columns = useMemo(
     () => [
@@ -78,28 +84,44 @@ const TransactionTable = () => {
     []
   );
 
-  const table = useMaterialReactTable({ columns, data });
+  const table = useMaterialReactTable({ columns, data,
+    muiTableBodyRowProps: ({row}) => ({
+      onClick:(event) => {
+        handleDriverModal();
+      },
+      sx: {
+        cursor: "pointer", //you might want to change the cursor too when adding an onClick
+      },
+    })
+   });
 
   return (
-    <MaterialReactTable
-      columns={columns}
-      data={data}
-      enableRowActions
-      renderRowActionMenuItems={({ row, table }) => [
-        <MRT_ActionMenuItem
-          label="Edit"
-          onClick={() => console.info("Edit")}
-          table={table}
-        />,
-        <MRT_ActionMenuItem
-          key="delete"
-          label="Delete"
-          onClick={() => console.info("Delete")}
-          table={table}
-        />,
-      ]}
-    />
+    <>
+      <MaterialReactTable
+        columns={columns}
+        data={data}
+        table={table}
+        enableRowActions
+        renderRowActionMenuItems={({ row, table }) => [
+          <MRT_ActionMenuItem
+            label="Edit"
+            onClick={() => console.info("Edit")}
+            table={table}
+          />,
+          <MRT_ActionMenuItem
+            key="delete"
+            label="Delete"
+            onClick={() => console.info("Delete")}
+            table={table}
+          />,
+        ]}
+      />
+      <div className={`${driverModal? "absolute z-[100]" : "hidden"
+          } top-[60px] left-[20%]`}>
+            < DriverModal setDriverModal={setDriverModal} />
+      </div>
+    </>
   );
 };
 
-export default TransactionTable;
+export default DriverTable;

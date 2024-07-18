@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function StudentPopUp({ setProductPopup }) {
-  const handleProductPopUpClose = () => {
-    setProductPopup(false);
+export default function DriverModal({ setDriverModal }) {
+  const handleDriverModalClose = () => {
+    setDriverModal(false);
     console.log("its closed");
   };
   return (
@@ -11,7 +11,7 @@ export default function StudentPopUp({ setProductPopup }) {
         <div className="flex items-center font-semibold justify-between m-2 w-[90%]">
           <h1 className="text-grey-800">Student Information</h1>
           <button
-            onClick={handleProductPopUpClose}
+            onClick={handleDriverModalClose}
             className="bg-red-500 w-[100px] text-white p-1 rounded-md"
           >
             Close

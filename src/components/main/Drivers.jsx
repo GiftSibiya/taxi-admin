@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import TransactionTable from "../transactions/TransactionTable";
-import CreateDriver from "../transactions/CreateDriver";
+import CreateDriver from "../modals/create/CreateDriverModal";
+import DriverTable from "../tables/DriverTable";
 
 export default function Transactions() {
   const [createPage, setCreatePage] = useState(false);
@@ -21,7 +21,7 @@ export default function Transactions() {
         <CreateDriver setCreatePage={setCreatePage} />
       </div>
       <div className="w-[95%] rounded-lg">
-        <TransactionTable />
+        <DriverTable />
       </div>
     </div>
   );
