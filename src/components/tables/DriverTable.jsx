@@ -30,40 +30,43 @@ const DriverTable = () => {
         size: 100,
       },
       {
-        accessorKey: "address",
+        accessorKey: "address.street",
         header: "Address",
         size: 200,
       },
       {
-        accessorKey: "license",
+        accessorKey: "license.code",
         header: "License Type",
         size: 100,
       },
       {
-        accessorKey: "amount",
-        header: "Amount",
+        accessorKey: "age",
+        header: "Age",
         size: 100,
       },
     ],
     []
   );
 
-  const table = useMaterialReactTable({ columns, data: driverData });
+  const table = useMaterialReactTable({ columns, data: driverData,
+    muiTableBodyRowProps: ({ row }) => ({
+      onClick: (event) => {
+        handleDriverModal(row.original);
+      },
+      sx: {
+        cursor: "pointer",
+      },
+    })}
+  );
 
   return (
     <>
       <MaterialReactTable
         columns={columns}
         data={driverData}
+        table={table}
         enableRowActions
-        muiTableBodyRowProps={({ row }) => ({
-          onClick: (event) => {
-            handleDriverModal(row.original);
-          },
-          sx: {
-            cursor: "pointer",
-          },
-        })}
+       
         renderRowActionMenuItems={({ row, table }) => [
           <MRT_ActionMenuItem
             label="Edit"

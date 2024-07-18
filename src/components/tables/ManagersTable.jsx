@@ -54,7 +54,6 @@ const ManagersTable = () => {
     data : managerData,
     muiTableBodyRowProps: ({ row }) => ({
       onClick: (event) => {
-        console.info(event, row.id, "Row has been clicked");
         handleStudentPopUp();
       },
       sx: {
