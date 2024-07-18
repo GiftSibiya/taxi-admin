@@ -39,6 +39,7 @@ export default function Dash() {
                 <EventTile date={"2-July-2024"} time={"12:00"} name={"Meeting With Rank Managers"} location={"Alexandra"}/>
                 <EventTile date={"6-July-2024"} time={"09:00"} name={"Meeting With Rank Managers"} location={"Johannesburg"}/>
                 <EventTile date={"6-July-2024"} time={"10:00"} name={"Meeting With Rank Managers"} location={"Pretoria"}/>
+                <EventTile date={"8-July-2024"} time={"09:00"} name={"Meeting With Rank Managers"} location={"Johannesburg"}/>
              </div>
 
             </div>
