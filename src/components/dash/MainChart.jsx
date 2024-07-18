@@ -1,25 +1,14 @@
 import ReactApexChart from "react-apexcharts";
 import React from "react";
 
+import graphData from "../../assets/json/overviewData.json"
+
 class MainChart extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      series: [
-        {
-          name: "Local Routes",
-          data: [45, 52, 38, 24, 33, 26, 21, 20, 6, 8, 15, 10],
-        },
-        {
-          name: "City Routes",
-          data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51, 32, 35],
-        },
-        {
-          name: "Long Distance routes",
-          data: [87, 57, 74, 99, 75, 38, 62, 47, 82, 56, 45, 47],
-        },
-      ],
+      series: graphData,
       options: {
         chart: {
           height: 350,

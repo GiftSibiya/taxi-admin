@@ -6,52 +6,15 @@ import {
 } from "material-react-table";
 import DriverModal from "../modals/detail/DriverModal";
 
-//nested data is ok, see accessorKeys in ColumnDef below
-const data = [
-  {
-    fullName: "John Doe ",
-    address: "261 Erdman Ford",
-    license: "Code 10 PrDP",
-    date: "12/12/2023",
-    amount: 2300,
-  },
-  {
-    fullName: "Jane Doe",
-    address: "769 Dominic Grove",
-    license: "Code 10",
-    date: "10/12/2023",
-    amount: 2300,
-  },
-  {
-    fullName: "Joe Doe",
-    address: "566 Brakus Inlet",
-    license: "Code 10 PrDP",
-    date: "10/10/2023",
-    amount: 2300,
-  },
-  {
-    fullName: "Kevin Vandy ",
-    address: "722 Emie Stream",
-    license: "Code 8 ",
-    date: "05/12/2023",
-    amount: 2300,
-  },
-  {
-    fullName: "Joshua Rolluffs",
-    address: "32188 Larkin Turnpike",
-    license: "Code 10 ",
-    date: "01/12/2023",
-    amount: 2300,
-  },
-];
+import driverData from "../../assets/json/drivers.json"
 
 const DriverTable = () => {
   const [driverModal, setDriverModal] = useState(false)
-  
+
   const handleDriverModal = () => {
     setDriverModal(true)
   }
-  //should be memoized or stable
+
   const columns = useMemo(
     () => [
       {
@@ -59,7 +22,6 @@ const DriverTable = () => {
         header: "Date",
         size: 100,
       },
-
       {
         accessorKey: "fullName",
         header: "Full Name",
@@ -84,24 +46,22 @@ const DriverTable = () => {
     []
   );
 
-  const table = useMaterialReactTable({ columns, data,
-    muiTableBodyRowProps: ({row}) => ({
-      onClick:(event) => {
-        handleDriverModal();
-      },
-      sx: {
-        cursor: "pointer", //you might want to change the cursor too when adding an onClick
-      },
-    })
-   });
+  const table = useMaterialReactTable({ columns, data: driverData });
 
   return (
     <>
       <MaterialReactTable
         columns={columns}
-        data={data}
-        table={table}
+        data={driverData}
         enableRowActions
+        muiTableBodyRowProps={({ row }) => ({
+          onClick: (event) => {
+            handleDriverModal();
+          },
+          sx: {
+            cursor: "pointer",
+          },
+        })}
         renderRowActionMenuItems={({ row, table }) => [
           <MRT_ActionMenuItem
             label="Edit"
@@ -118,7 +78,7 @@ const DriverTable = () => {
       />
       <div className={`${driverModal? "absolute z-[100]" : "hidden"
           } top-[60px] left-[20%]`}>
-            < DriverModal setDriverModal={setDriverModal} />
+            <DriverModal setDriverModal={setDriverModal} />
       </div>
     </>
   );

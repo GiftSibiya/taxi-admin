@@ -8,43 +8,7 @@ import {
 // Components
 import ManagerModal from "../modals/detail/ManagerModal";
 
-const data = [
-  {
-    fullName: "John Doe ",
-    address: "261 Erdman Ford",
-    license: "Code 10 PrDP",
-    date: "12/12/2023",
-    status: "Passed",
-  },
-  {
-    fullName: "Jane Doe",
-    address: "769 Dominic Grove",
-    license: "Code 10",
-    date: "10/12/2023",
-    status: "Learners Training",
-  },
-  {
-    fullName: "Joe Doe",
-    address: "566 Brakus Inlet",
-    license: "Code 10 PrDP",
-    date: "10/10/2023",
-    status: "Failed",
-  },
-  {
-    fullName: "Kevin Vandy ",
-    address: "722 Emie Stream",
-    license: "Code 8 ",
-    date: "05/12/2023",
-    status: "Passed",
-  },
-  {
-    fullName: "Joshua Rolluffs",
-    address: "32188 Larkin Turnpike",
-    license: "Code 10 ",
-    date: "01/12/2023",
-    status: "Driving Training",
-  },
-];
+import managerData from "../../assets/json/manager.json"
 
 const ManagersTable = () => {
   const [managerModal, setManagerModal] = useState(false);
@@ -87,7 +51,7 @@ const ManagersTable = () => {
 
   const table = useMaterialReactTable({
     columns,
-    data,
+    data : managerData,
     muiTableBodyRowProps: ({ row }) => ({
       onClick: (event) => {
         console.info(event, row.id, "Row has been clicked");
@@ -103,7 +67,7 @@ const ManagersTable = () => {
     <>
       <MaterialReactTable
         columns={columns}
-        data={data}
+        data={managerData}
         table={table}
         enableRowActions
         onClick={handleStudentPopUp}

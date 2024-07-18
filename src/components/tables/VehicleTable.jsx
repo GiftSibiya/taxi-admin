@@ -4,45 +4,12 @@ import {
   MRT_ActionMenuItem,
   useMaterialReactTable,
 } from "material-react-table";
+
+// Modals
 import VehicleModal from "../modals/detail/VehicleModal";
 
-const data = [
-  {
-    status: "Available",
-    plate_number: "CLK 121 GP ",
-    detail: "Toyota Quantum",
-    driver: "John Piri",
-    km: "283 862 KM",
-  },
-  {
-    status: "Busy",
-    plate_number: "VDB 234 MP",
-    detail: "Toyota Quantum",
-    driver: "Not Assigned ",
-    km: "328 127 KM",
-  },
-  {
-    status: "Busy",
-    plate_number: "GBC 281 GP",
-    detail: "Toyota Siyaya",
-    driver: "Simon Ndoda",
-    km: "190 872 KM",
-  },
-  {
-    status: "Available",
-    plate_number: "RFO 967 GP",
-    detail: "Toyota Quantum",
-    driver: "Not Assigned ",
-    km: "234 762 KM",
-  },
-  {
-    status: "Busy",
-    plate_number: "CHE 862 GP",
-    detail: "Toyota Siyaya",
-    driver: "Steve Kekana",
-    km: "172 722 KM",
-  },
-];
+// Data
+import vehicelData from "../../assets/json/vehicle.json"
 
 const VehicleTable = () => {
   const [vehicelModal, setVehicleModal] = useState(false);
@@ -85,7 +52,7 @@ const VehicleTable = () => {
 
   const table = useMaterialReactTable({
     columns,
-    data,
+    data : vehicelData,
     muiTableBodyRowProps: ({ row }) => ({
       onClick: (event) => {
         console.info(event, row.id, "Row has been clicked");
@@ -101,7 +68,7 @@ const VehicleTable = () => {
     <>
       <MaterialReactTable
         columns={columns}
-        data={data}
+        data={vehicelData}
         table={table}
         enableRowActions
         onClick={handleStudentPopUp}
