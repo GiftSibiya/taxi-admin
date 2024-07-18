@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import SmDashTile from "../utils/SmDashTile";
 import { LuShoppingCart } from "react-icons/lu";
 import { BsCashCoin } from "react-icons/bs";
 import { LuUsers2 } from "react-icons/lu";
 import MainChart from "../dash/MainChart";
-import Calendar from 'react-calendar';
+import EventTile from "../utils/EventTile";
 
 
 export default function Dash() {
-  const [value, onChange] = useState(new Date());
   return (
     <div className=" flex flex-col items-center w-full bg-gray-200 h-full rounded-tl-2xl ">
       <div className="flex flex-col h-full w-[95%]  ">
@@ -29,9 +28,19 @@ export default function Dash() {
                 </div>
               </div>
           </div>
-          <div className="w-[38%] ring ">
-            <div className="bg-slate-50 p-5 h-[300px] rounded-[30px]">
-              <Calendar onChange={onChange} value={value} showWeekNumbers={true}  />
+          <div className="w-[38%] ">
+            <div className="bg-slate-50 flex flex-col items-center p-5 h-[730px] rounded-[30px]">
+            <div className="text-2xl my-2">Schedule</div>
+            <div className="text-2xl my-2">{new Date().toLocaleDateString()}</div>
+
+             <div className="bg-slate-200 w-[90%] rounded-[20px] mt-[30px] h-[530px] overflow-scroll">
+                <EventTile date={"24-July-2024"} time={"09:00"} name={"Meeting With Rank Managers"} location={"Johannesburg"} />
+                <EventTile date={"27-July-2024"} time={"10:00"} name={"Meeting With Rank Managers"} location={"Midrand"} />
+                <EventTile date={"2-July-2024"} time={"12:00"} name={"Meeting With Rank Managers"} location={"Alexandra"}/>
+                <EventTile date={"6-July-2024"} time={"09:00"} name={"Meeting With Rank Managers"} location={"Johannesburg"}/>
+                <EventTile date={"6-July-2024"} time={"10:00"} name={"Meeting With Rank Managers"} location={"Pretoria"}/>
+             </div>
+
             </div>
           </div>
         </div>
