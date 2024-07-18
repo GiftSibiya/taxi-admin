@@ -1,15 +1,15 @@
 import React from "react";
 
-export default function DriverModal({ setDriverModal }) {
+export default function DriverModal({ setDriverModal, selectedRow }) {
   const handleDriverModalClose = () => {
     setDriverModal(false);
-    console.log("its closed");
+    console.log(selectedRow);
   };
   return (
     <div className="flex flex-col items-center border-2 bg-white border-green-600 h-[500px] w-[1020px] rounded-2xl">
       <div className="flex flex-col justify-center w-full">
         <div className="flex items-center font-semibold justify-between m-2 w-[90%]">
-          <h1 className="text-grey-800">Student Information</h1>
+          <h1 className="text-grey-800">Driver Information</h1>
           <button
             onClick={handleDriverModalClose}
             className="bg-red-500 w-[100px] text-white p-1 rounded-md"
@@ -28,9 +28,10 @@ export default function DriverModal({ setDriverModal }) {
                   <div className="m-2 ">
                     <p className="font-semibold"> Full Name</p>
                     <input
-                      value={"John Doe"}
+                      value={selectedRow.fullName}
                       placeholder="Name"
                       className="border-[1px] p-[3px] border-gray-800 rounded-md "
+                      // onChange={}
                     ></input>
                   </div>
                   {/* AGE */}
@@ -111,7 +112,7 @@ export default function DriverModal({ setDriverModal }) {
                   <p className="font-semibold">Street Address</p>
                   <input
                     type="String"
-                    value="123 Madiba Street, Winnie"
+                    value={selectedRow.address.street}
                     placeholder="Name"
                     className="border-[1px] w-[400px] p-[3px] rounded-md border-gray-800 "
                   ></input>
@@ -120,10 +121,10 @@ export default function DriverModal({ setDriverModal }) {
                   <div className="m-2 ">
                     <p className="font-semibold">City</p>
                     <input
-                      type="Date"
-                      value="2022"
+                      type="text"
+                      value={selectedRow.address.city}
                       placeholder="Name"
-                      className="border-[1px] p-[3px] rounded-md border-gray-800 "
+                      className="border-[1px] p-[3px] w-[120px] rounded-md border-gray-800 "
                     ></input>
                   </div>
                   <div className="m-2 ">

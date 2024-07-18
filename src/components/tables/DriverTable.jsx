@@ -10,8 +10,10 @@ import driverData from "../../assets/json/drivers.json"
 
 const DriverTable = () => {
   const [driverModal, setDriverModal] = useState(false)
+  const [selectedRow, setSelectedRow] = useState(null);
 
-  const handleDriverModal = () => {
+  const handleDriverModal = (rowData) => {
+    setSelectedRow(rowData);
     setDriverModal(true)
   }
 
@@ -56,7 +58,7 @@ const DriverTable = () => {
         enableRowActions
         muiTableBodyRowProps={({ row }) => ({
           onClick: (event) => {
-            handleDriverModal();
+            handleDriverModal(row.original);
           },
           sx: {
             cursor: "pointer",
@@ -78,7 +80,8 @@ const DriverTable = () => {
       />
       <div className={`${driverModal? "absolute z-[100]" : "hidden"
           } top-[60px] left-[20%]`}>
-            <DriverModal setDriverModal={setDriverModal} />
+            <DriverModal setDriverModal={setDriverModal} selectedRow={selectedRow} />
+
       </div>
     </>
   );
