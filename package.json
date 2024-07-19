@@ -1,10 +1,9 @@
 {
-  "homepage": "https://github.com/GiftSibiya/taxi-admin",
   "name": "taxi-admin",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.11.4",
+    "@emotion/react": "^11.11.4",latest
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.15",
     "@mui/material": "^5.15.15",
