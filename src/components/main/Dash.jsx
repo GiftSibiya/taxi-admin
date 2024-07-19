@@ -4,6 +4,8 @@ import { LuShoppingCart } from "react-icons/lu";
 import { BsCashCoin } from "react-icons/bs";
 import { LuUsers2 } from "react-icons/lu";
 import MainChart from "../dash/MainChart";
+import EventTile from "../utils/EventTile";
+
 
 export default function Dash() {
   return (
@@ -14,7 +16,7 @@ export default function Dash() {
         </div>
         <div className="flex justify-between h-full ">
           {/* First Section */}
-          <div className=" w-[60%] ring-1 ring-black">
+          <div className=" w-[60%] ">
             <div className="flex flex-row justify-around w-[100%] ">
               <SmDashTile title={"Enrollment"} icon={<LuShoppingCart size={30} />} figure={"750"} percentage={"10%"} />
               <SmDashTile title={"Revenue"} icon={<BsCashCoin size={30} />} figure={"R16,240"} percentage={"25%"} />
@@ -26,9 +28,22 @@ export default function Dash() {
                 </div>
               </div>
           </div>
-          <div className="w-[38%] ring ">
-             Second 
+          <div className="w-[38%] ">
+            <div className="bg-slate-50 flex flex-col items-center p-5 h-[730px] rounded-[30px]">
+            <div className="text-2xl my-2">Schedule</div>
+            <div className="text-2xl my-2">{new Date().toLocaleDateString()}</div>
+
+             <div className="bg-slate-200 w-[90%] rounded-[20px] mt-[30px] h-[530px] overflow-scroll">
+                <EventTile date={"24-July-2024"} time={"09:00"} name={"Meeting With Rank Managers"} location={"Johannesburg"} />
+                <EventTile date={"27-July-2024"} time={"10:00"} name={"Meeting With Rank Managers"} location={"Midrand"} />
+                <EventTile date={"2-July-2024"} time={"12:00"} name={"Meeting With Rank Managers"} location={"Alexandra"}/>
+                <EventTile date={"6-July-2024"} time={"09:00"} name={"Meeting With Rank Managers"} location={"Johannesburg"}/>
+                <EventTile date={"6-July-2024"} time={"10:00"} name={"Meeting With Rank Managers"} location={"Pretoria"}/>
+                <EventTile date={"8-July-2024"} time={"09:00"} name={"Meeting With Rank Managers"} location={"Johannesburg"}/>
              </div>
+
+            </div>
+          </div>
         </div>
       </div>
     </div>

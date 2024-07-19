@@ -1,0 +1,97 @@
+[
+  {
+      "fullName": "John Doe",
+      "phone": "07123456789",
+      "age": 36,
+      "gender": "Male",
+      "email": "YR0gC@example.com",
+      "id_num": 9011235580067,
+      "address": {
+          "street": "261 Erdman Ford",
+          "city": "Wisokyburgh",
+          "zip": 1632
+      },
+      "license": {
+          "code": "Code 10 PrDP",
+          "expiry": "2025-12-15",
+          "restriction": "None"
+      },
+      "date": "2023-12-12"
+  },
+  {
+      "fullName": "Jane Doe",
+      "phone": "07876543210",
+      "age": 42,
+      "gender": "Female",
+      "email": "zxcvB@example.com",
+      "id_num": 8204115678901,
+      "address": {
+          "street": "769 Dominic Grove",
+          "city": "South Elvis",
+          "zip": 2984
+      },
+      "license": {
+          "code": "Code 10",
+          "expiry": "10/12/2023",
+          "restriction": "None"
+      },
+      "date": "10/12/2023"
+  },
+  {
+      "fullName": "Joe Doe",
+      "phone": "07345678901",
+      "age": 37,
+      "gender": "Male",
+      "email": "asdfGH@example.com",
+      "id_num": 8506234567890,
+      "address": {
+          "street": "566 Brakus Inlet",
+          "city": "North Howemouth",
+          "zip": 3475
+      },
+      "license": {
+          "code": "Code 10 PrDP",
+          "expiry": "10/10/2023",
+          "restriction": "None"
+      },
+      "date": "10/10/2023"
+  },
+  {
+      "fullName": "Kevin Vandy",
+      "phone": "07234567890",
+      "age": 28,
+      "gender": "Male",
+      "email": "qwerTY@example.com",
+      "id_num": 9408112345678,
+      "address": {
+          "street": "722 Emie Stream",
+          "city": "New Bartholomebury",
+          "zip": 4567
+      },
+      "license": {
+          "code": "Code 8",
+          "expiry": "05/12/2023",
+          "restriction": "None"
+      },
+      "date": "05/12/2023"
+  },
+  {
+      "fullName": "Joshua Rolluffs",
+      "phone": "07456789012",
+      "age": 51,
+      "gender": "Male",
+      "email": "mnbvC@example.com",
+      "id_num": 7305213456789,
+      "address": {
+          "street": "32188 Larkin Turnpike",
+          "city": "East Shawnberg",
+          "zip": 5678
+      },
+      "license": {
+          "code": "Code 10",
+          "expiry": "01/12/2023",
+          "restriction": "None"
+      },
+      "date": "01/12/2023"
+  }
+]

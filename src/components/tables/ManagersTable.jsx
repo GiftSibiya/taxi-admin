@@ -4,55 +4,45 @@ import {
   MRT_ActionMenuItem,
   useMaterialReactTable,
 } from "material-react-table";
-import ProductPopUp from "./ProductPop";
 
-//nested data is ok, see accessorKeys in ColumnDef below
-const data = [
-  {
-    product: "Code 8 Learners License ",
-    price: "R1,400",
-  },
-  {
-    product: "Code 8 Drivers License",
-    price: "R2,300",
-  },
-  {
-    product: "Code 10 Learners License",
-    price: "R7,000",
-  },
-  {
-    product: "Code 10 Drivers License ",
-    price: "R7,000",
-  },
-  {
-    product: "Code 14 Learners License",
-    price: "R7,000",
-  },
-  {
-    product: "Code 14 Drivers License",
-    price: "R7,000",
-  },
-];
+// Components
+import ManagerModal from "../modals/detail/ManagerModal";
 
-const ProductTable = () => {
-  const [ProductPopup, setProductPopup] = useState(false);
+import managerData from "../../assets/json/manager.json"
 
-  const handleProductPopUp = () => {
-    setProductPopup(true);
+const ManagersTable = () => {
+  const [managerModal, setManagerModal] = useState(false);
+
+  const handleStudentPopUp = () => {
+    setManagerModal(true);
     console.log("popup is Opened");
   };
   //should be memoized or stable
   const columns = useMemo(
     () => [
       {
-        accessorKey: "product",
-        header: "Product ",
-        size: 500,
+        accessorKey: "fullName",
+        header: "Full Name",
+        size: 100,
       },
-
       {
-        accessorKey: "price",
-        header: "Price",
+        accessorKey: "date",
+        header: "Enrolled Date",
+        size: 100,
+      },
+      {
+        accessorKey: "address",
+        header: "Address",
+        size: 200,
+      },
+      {
+        accessorKey: "license",
+        header: "License Type",
+        size: 100,
+      },
+      {
+        accessorKey: "status",
+        header: "Status",
         size: 100,
       },
     ],
@@ -61,11 +51,10 @@ const ProductTable = () => {
 
   const table = useMaterialReactTable({
     columns,
-    data,
+    data : managerData,
     muiTableBodyRowProps: ({ row }) => ({
       onClick: (event) => {
-        console.info(event, row.id, "Row has been clicked");
-        handleProductPopUp();
+        handleStudentPopUp();
       },
       sx: {
         cursor: "pointer", //you might want to change the cursor too when adding an onClick
@@ -77,10 +66,10 @@ const ProductTable = () => {
     <>
       <MaterialReactTable
         columns={columns}
-        data={data}
+        data={managerData}
         table={table}
         enableRowActions
-        onClick={handleProductPopUp}
+        onClick={handleStudentPopUp}
         renderRowActionMenuItems={({ row, table }) => [
           <MRT_ActionMenuItem
             label="Edit"
@@ -97,13 +86,12 @@ const ProductTable = () => {
       />
       <div
         className={` ${
-          ProductPopup ? "absolute z-[100]" : "hidden"
-        } top-[60px] left-[20%]`}
-      >
-        <ProductPopUp setProductPopup={setProductPopup} />
+          managerModal ? "absolute z-[100]" : "hidden"
+        } top-[60px] left-[20%]`}>
+        < ManagerModal setManagerModal={setManagerModal} />
       </div>
     </>
   );
 };
 
-export default ProductTable;
+export default ManagersTable;

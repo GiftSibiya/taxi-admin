@@ -1,0 +1,110 @@
+[
+  {
+    "status": "Available",
+    "plate_number": "CLK 121 GP",
+    "detail": "Toyota Quantum",
+    "driver": "John Piri",
+    "km": "283 862 KM",
+    "disk_date": "2025-12-15",
+    "vin": "4Y1-SL658-4-8-Z-41-1439",
+    "fuel": "petrol",
+    "enrol_date": "2024-07-15",
+    "route": "Local",
+    "seats": 15,
+    "service": {
+      "last_service_date": "2025-12-15",
+      "last_service_km": "280 021 KM",
+      "next_service_km": "300 000 KM"
+    }
+  },
+  {
+    "status": "Busy",
+    "plate_number": "VDB 234 MP",
+    "detail": "Toyota Quantum",
+    "driver": "Not Assigned",
+    "km": "328 127 KM",
+    "disk_date": "2025-11-15",
+    "vin": "4Y1-SL658-4-8-Z-41-1439",
+    "fuel": "diesel",
+    "enrol_date": "2023-09-10",
+    "route": "Provincial",
+    "seats": 15,
+    "service": {
+      "last_service_date": "2025-11-10",
+      "last_service_km": "320 000 KM",
+      "next_service_km": "340 000 KM"
+    }
+  },
+  {
+    "status": "Busy",
+    "plate_number": "GBC 281 GP",
+    "detail": "Toyota Siyaya",
+    "driver": "Simon Ndoda",
+    "km": "190 872 KM",
+    "disk_date": "2026-12-15",
+    "vin": "4Y1-SL658-4-8-Z-41-1439",
+    "fuel": "petrol",
+    "enrol_date": "2022-01-20",
+    "route": "Intercity",
+    "seats": 14,
+    "service": {
+      "last_service_date": "2026-06-10",
+      "last_service_km": "185 000 KM",
+      "next_service_km": "200 000 KM"
+    }
+  },
+  {
+    "status": "Available",
+    "plate_number": "RFO 967 GP",
+    "detail": "Toyota Quantum",
+    "driver": "Not Assigned",
+    "km": "234 762 KM",
+    "disk_date": "2024-12-15",
+    "vin": "RLY-KE45-4-8-Z-41-1439",
+    "fuel": "diesel",
+    "enrol_date": "2023-05-05",
+    "route": "Local",
+    "seats": 15,
+    "service": {
+      "last_service_date": "2024-12-01",
+      "last_service_km": "230 000 KM",
+      "next_service_km": "250 000 KM"
+    }
+  },
+  {
+    "status": "In Service",
+    "plate_number": "CHE 862 GP",
+    "detail": "Toyota Siyaya",
+    "driver": "Steve Kekana",
+    "km": "172 722 KM",
+    "disk_date": "2025-12-15",
+    "vin": "8DS-LG658-6-8-Z-41-1439",
+    "fuel": "petrol",
+    "enrol_date": "2021-11-11",
+    "route": "Local",
+    "seats": 14,
+    "service": {
+      "last_service_date": "2025-11-30",
+      "last_service_km": "170 000 KM",
+      "next_service_km": "180 000 KM"
+    }
+  },
+  {
+    "status": "Busy",
+    "plate_number": "CHE 862 GP",
+    "detail": "Toyota Siyaya",
+    "driver": "Steve Kekana",
+    "km": "172 722 KM",
+    "disk_date": "2025-12-15",
+    "vin": "4Y1-SL658-4-8-Z-41-1439",
+    "fuel": "petrol",
+    "enrol_date": "2021-11-11",
+    "route": "Local",
+    "seats": 14,
+    "service": {
+      "last_service_date": "2025-11-30",
+      "last_service_km": "170 000 KM",
+      "next_service_km": "180 000 KM"
+    }
+  }
+]

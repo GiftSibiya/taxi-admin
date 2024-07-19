@@ -1,17 +1,17 @@
 import React from "react";
 
-export default function CreateStudentPop({ setStudentCreate }) {
-  const handleStudentCreate = () => {
-    setStudentCreate(false);
+export default function ManagerModal({ setManagerModal }) {
+  const handleManagerModalClose = () => {
+    setManagerModal(false);
     console.log("its closed");
   };
   return (
     <div className="flex flex-col items-center border-2 bg-white border-green-600 h-[500px] w-[1020px] rounded-2xl">
       <div className="flex flex-col justify-center w-full">
         <div className="flex items-center font-semibold justify-between m-2 w-[90%]">
-          <h1 className="text-grey-800">Create New Student</h1>
+          <h1 className="text-grey-800">Student Information</h1>
           <button
-            onClick={handleStudentCreate}
+            onClick={handleManagerModalClose}
             className="bg-red-500 w-[100px] text-white p-1 rounded-md"
           >
             Close
@@ -28,6 +28,7 @@ export default function CreateStudentPop({ setStudentCreate }) {
                   <div className="m-2 ">
                     <p className="font-semibold"> Full Name</p>
                     <input
+                      value={"John Doe"}
                       placeholder="Name"
                       className="border-[1px] p-[3px] border-gray-800 rounded-md "
                     ></input>
@@ -37,7 +38,8 @@ export default function CreateStudentPop({ setStudentCreate }) {
                     <p className="font-semibold">Age</p>
                     <input
                       type="number"
-                      placeholder=""
+                      value="27"
+                      placeholder="Name"
                       className="border-[1px] text-center p-[3px] w-[50px] rounded-md border-gray-800 "
                     ></input>
                   </div>
@@ -47,10 +49,20 @@ export default function CreateStudentPop({ setStudentCreate }) {
                 {/* Enroll Date  */}
                 <div className="flex">
                   <div className="m-2 ">
+                    <p className="font-semibold">Enroll Date</p>
+                    <input
+                      type="Date"
+                      value="2022-02-14"
+                      placeholder="Name"
+                      className="border-[1px] p-[3px] w-[120px] rounded-md border-gray-800 "
+                    ></input>
+                  </div>
+                  <div className="m-2 ">
                     <p className="font-semibold">Phone Number</p>
                     <input
                       type="number"
-                      placeholder="Phone No."
+                      value="0712345678"
+                      placeholder="Name"
                       className="border-[1px] p-[3px] w-[120px] rounded-md border-gray-800 "
                     ></input>
                   </div>
@@ -63,6 +75,7 @@ export default function CreateStudentPop({ setStudentCreate }) {
                   <p className="font-semibold"> ID Number</p>
                   <input
                     type="number"
+                    value={"9604280485057"}
                     placeholder="Name"
                     className="border-[1px] p-[3px] border-gray-800 rounded-md "
                   ></input>
@@ -72,15 +85,17 @@ export default function CreateStudentPop({ setStudentCreate }) {
                 <div className="flex">
                   <div className="m-2 ">
                     <p className="font-semibold">Gender</p>
-                    <select className="border-[1px] p-[3px] w-[100px] rounded-md border-gray-800">
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                      <option value="other">Other</option>
-                    </select>
+                    <input
+                      type="String"
+                      value="Male"
+                      placeholder="Name"
+                      className="border-[1px] p-[3px] w-[60px] rounded-md border-gray-800 "
+                    ></input>
                   </div>
                   <div className="m-2 ">
                     <p className="font-semibold"> Email</p>
                     <input
+                      value={"John Doe@gamil.com"}
                       type="email"
                       placeholder="Name"
                       className="border-[1px] p-[3px] border-gray-800 rounded-md "
@@ -96,6 +111,7 @@ export default function CreateStudentPop({ setStudentCreate }) {
                   <p className="font-semibold">Street Address</p>
                   <input
                     type="String"
+                    value="123 Madiba Street, Winnie"
                     placeholder="Name"
                     className="border-[1px] w-[400px] p-[3px] rounded-md border-gray-800 "
                   ></input>
@@ -105,6 +121,7 @@ export default function CreateStudentPop({ setStudentCreate }) {
                     <p className="font-semibold">City</p>
                     <input
                       type="Date"
+                      value="2022"
                       placeholder="Name"
                       className="border-[1px] p-[3px] rounded-md border-gray-800 "
                     ></input>
@@ -113,6 +130,7 @@ export default function CreateStudentPop({ setStudentCreate }) {
                     <p className="font-semibold">Enroll Date</p>
                     <input
                       type="String"
+                      value="Tembisa"
                       placeholder="Name"
                       className="border-[1px] p-[3px] rounded-md border-gray-800 "
                     ></input>
@@ -121,7 +139,8 @@ export default function CreateStudentPop({ setStudentCreate }) {
                     <p className="font-semibold">Zip</p>
                     <input
                       type="number"
-                      placeholder=""
+                      value="1632"
+                      placeholder="Name"
                       className="border-[1px] p-[3px] w-[60px] rounded-md border-gray-800 "
                     ></input>
                   </div>
@@ -140,35 +159,21 @@ export default function CreateStudentPop({ setStudentCreate }) {
                 <div className="flex">
                   <div className="m-2 ">
                     <p className="font-semibold"> License Type</p>
-                    <select
+                    <input
+                      value={"Code 10 PrDP"}
                       placeholder="Name"
                       className="border-[1px] p-[3px] w-[120px] border-gray-800 rounded-md "
-                    >
-                      <option value="Code8">Code 8</option>
-                      <option value="Code8">Code 8 PrDP</option>
-                      <option value="Code8">Code 10</option>
-                      <option value="Code8">Code 10 PrDP</option>
-                      <option value="Code8">Code 14</option>
-                      <option value="Code8">Code 14 PrDP</option>
-                    </select>
+                    ></input>
                   </div>
                   {/* AGE */}
                   <div className="m-2 ">
-                    <p className="font-semibold">Code</p>
-                    <select
+                    <p className="font-semibold">Status</p>
+                    <input
                       type="string"
+                      value="Learners"
                       placeholder="Name"
-                      className="border-[1px] p-[3px] w-[60px] rounded-md border-gray-800 "
-                    >
-                      <option value={"A"}>A</option>
-                      <option value={"A1"}>A1</option>
-                      <option value={"B"}>B</option>
-                      <option value={"C1"}>C1</option>
-                      <option value={"C"}>C</option>
-                      <option value={"EB"}>EB</option>
-                      <option value={"EC1"}>EC1</option>
-                      <option value={"EC"}>EC</option>
-                    </select>
+                      className="border-[1px] text-center p-[3px] w-[100px] rounded-md border-gray-800 "
+                    ></input>
                   </div>
                   {/* -- */}
                 </div>
@@ -179,21 +184,19 @@ export default function CreateStudentPop({ setStudentCreate }) {
                     <p className="font-semibold">Expiry Date</p>
                     <input
                       type="Date"
+                      value="2022-02-14"
                       placeholder="Name"
                       className="border-[1px] p-[3px] w-[120px] rounded-md border-gray-800 "
                     ></input>
                   </div>
                   <div className="m-2 ">
                     <p className="font-semibold">PrDP Category</p>
-                    <select
+                    <input
                       type="string"
+                      value="G, P"
                       placeholder="Name"
-                      className="border-[1px] p-[3px] w-[180px] rounded-md border-gray-800 "
-                    >
-                      <option value="P">P- Passengers</option>
-                      <option value="G">G- Goods</option>
-                      <option value="D">D- Dangerous Goods</option>
-                    </select>
+                      className="border-[1px] p-[3px] w-[120px] rounded-md border-gray-800 "
+                    ></input>
                   </div>
                 </div>
                 {/* -- */}
@@ -204,6 +207,7 @@ export default function CreateStudentPop({ setStudentCreate }) {
                   <p className="font-semibold"> ID Number</p>
                   <input
                     type="number"
+                    value={"9604280485057"}
                     placeholder="Name"
                     className="border-[1px] p-[3px] border-gray-800 rounded-md "
                   ></input>
@@ -212,24 +216,22 @@ export default function CreateStudentPop({ setStudentCreate }) {
                 {/* Enroll Date  */}
                 <div className="flex">
                   <div className="m-2 ">
+                    <p className="font-semibold">Code</p>
+                    <input
+                      type="string"
+                      value="C10"
+                      placeholder="Name"
+                      className="border-[1px] p-[3px] w-[60px] rounded-md border-gray-800 "
+                    ></input>
+                  </div>
+                  <div className="m-2 ">
                     <p className="font-semibold"> Vehicel Restrictions</p>
-                    <select
+                    <input
+                      value={"None"}
                       type="email"
                       placeholder="Name"
                       className="border-[1px] p-[3px] border-gray-800 rounded-md "
-                    >
-                      <option value={"None"}>0-None</option>
-                      <option value={"1-Automatic"}>1-Automatic</option>
-                      <option value={"2-Electrically Powered"}>
-                        2-Electrically Powered
-                      </option>
-                      <option value={"3-Physically disabled"}>
-                        3-Physically disabled
-                      </option>
-                      <option value={"4-Bus > 16000kg (GVM) permitted"}>
-                        4-Bus &gt; 16000kg (GVM) permitted
-                      </option>
-                    </select>
+                    ></input>
                   </div>
                 </div>
                 {/* -- */}
@@ -238,22 +240,20 @@ export default function CreateStudentPop({ setStudentCreate }) {
               {/* ADDRRESS LINES */}
               <div className=" bg-gray-100 rounded-md h-[175px] m-[2px]">
                 <div className="m-2 ">
-                  <p className="font-semibold">Driver restrictions</p>
-                  <select
+                  <p className="font-semibold">Status</p>
+                  <input
                     type="String"
+                    value="Training For Code 10 Drivers "
                     placeholder="Name"
-                    className="border-[1px] w-[150px] p-[3px] rounded-md border-gray-800 "
-                  >
-                    <option value="None">None</option>
-                    <option value="Glasses">Glasses</option>
-                    <option value="Artificial Limb">Artificial Limb</option>
-                  </select>
+                    className="border-[1px] w-[350px] p-[3px] rounded-md border-gray-800 "
+                  ></input>
                 </div>
                 <div className="flex">
                   <div className="m-2 ">
                     <p className="font-semibold">Lessons</p>
                     <input
                       type="number"
+                      value="3"
                       placeholder="Name"
                       className="border-[1px] p-[3px] w-[70px] rounded-md border-gray-800 "
                     ></input>
@@ -262,6 +262,7 @@ export default function CreateStudentPop({ setStudentCreate }) {
                     <p className="font-semibold">Account Status</p>
                     <input
                       type="String"
+                      value="Fully Paid"
                       placeholder="Name"
                       className="border-[1px] p-[3px] rounded-md border-gray-800 "
                     ></input>
@@ -270,6 +271,7 @@ export default function CreateStudentPop({ setStudentCreate }) {
                     <p className="font-semibold">Balance</p>
                     <input
                       type="number"
+                      value="0.00"
                       placeholder="Name"
                       className="border-[1px] p-[3px] w-[60px] text-green-700 font-bold rounded-md border-gray-800 "
                     ></input>
