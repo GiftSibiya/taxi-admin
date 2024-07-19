@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/GiftSibiya/taxi-admin/static/css/main.5daa1d40.css",
-    "main.js": "/GiftSibiya/taxi-admin/static/js/main.f8d93856.js",
-    "static/media/quantum1.jpg": "/GiftSibiya/taxi-admin/static/media/quantum1.da51a83931e10086834a.jpg",
-    "index.html": "/GiftSibiya/taxi-admin/index.html",
-    "main.5daa1d40.css.map": "/GiftSibiya/taxi-admin/static/css/main.5daa1d40.css.map",
-    "main.f8d93856.js.map": "/GiftSibiya/taxi-admin/static/js/main.f8d93856.js.map"
+    "main.css": "/taxi-admin/static/css/main.5daa1d40.css",
+    "main.js": "/taxi-admin/static/js/main.1ef38352.js",
+    "static/media/quantum1.jpg": "/taxi-admin/static/media/quantum1.da51a83931e10086834a.jpg",
+    "index.html": "/taxi-admin/index.html",
+    "main.5daa1d40.css.map": "/taxi-admin/static/css/main.5daa1d40.css.map",
+    "main.1ef38352.js.map": "/taxi-admin/static/js/main.1ef38352.js.map"
   },
   "entrypoints": [
     "static/css/main.5daa1d40.css",
-    "static/js/main.f8d93856.js"
+    "static/js/main.1ef38352.js"
   ]
 }
