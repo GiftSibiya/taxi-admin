@@ -13,9 +13,11 @@ import vehicelData from "../../assets/json/vehicle.json"
 
 const VehicleTable = () => {
   const [vehicelModal, setVehicleModal] = useState(false);
+  const [selectedRow, setSelectedRow] = useState(null);
 
-  const handleStudentPopUp = () => {
+  const handleVehicleModal = (rowData) => {
     setVehicleModal(true);
+    setSelectedRow(rowData)
     console.log("popup is Opened");
   };
   //should be memoized or stable
@@ -56,7 +58,7 @@ const VehicleTable = () => {
     muiTableBodyRowProps: ({ row }) => ({
       onClick: (event) => {
         console.info(event, row.id, "Row has been clicked");
-        handleStudentPopUp();
+        handleVehicleModal(row.original);
       },
       sx: {
         cursor: "pointer", //you might want to change the cursor too when adding an onClick
@@ -71,7 +73,7 @@ const VehicleTable = () => {
         data={vehicelData}
         table={table}
         enableRowActions
-        onClick={handleStudentPopUp}
+        onClick={handleVehicleModal}
         renderRowActionMenuItems={({ row, table }) => [
           <MRT_ActionMenuItem
             label="Edit"
@@ -91,7 +93,7 @@ const VehicleTable = () => {
           vehicelModal ? "absolute z-[100]" : "hidden"
         } top-[60px] left-[20%]`}
       >
-        <VehicleModal setVehicleModal={setVehicleModal} />
+        <VehicleModal setVehicleModal={setVehicleModal} selectedRow={selectedRow} />
       </div>
     </>
   );

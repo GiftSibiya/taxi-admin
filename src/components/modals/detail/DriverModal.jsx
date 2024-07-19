@@ -28,7 +28,7 @@ export default function DriverModal({ setDriverModal, selectedRow }) {
                   <div className="m-2 ">
                     <p className="font-semibold"> Full Name</p>
                     <input
-                      value={selectedRow.fullName}
+                      value={selectedRow?.fullName}
                       placeholder="Name"
                       className="border-[1px] p-[3px] border-gray-800 rounded-md "
                     ></input>
@@ -38,7 +38,7 @@ export default function DriverModal({ setDriverModal, selectedRow }) {
                     <p className="font-semibold">Age</p>
                     <input
                       type="number"
-                      value={selectedRow.age}
+                      value={selectedRow?.age}
                       placeholder="Name"
                       className="border-[1px] text-center p-[3px] w-[50px] rounded-md border-gray-800 "
                     ></input>
@@ -52,7 +52,7 @@ export default function DriverModal({ setDriverModal, selectedRow }) {
                     <p className="font-semibold">Enroll Date</p>
                     <input
                       type="Date"
-                      value={selectedRow.date}
+                      value={selectedRow?.date}
                       placeholder="Name"
                       className="border-[1px] p-[3px] w-[120px] rounded-md border-gray-800 "
                     ></input>
@@ -61,7 +61,7 @@ export default function DriverModal({ setDriverModal, selectedRow }) {
                     <p className="font-semibold">Phone Number</p>
                     <input
                       type="number"
-                      value= {selectedRow.phone}
+                      value= {selectedRow?.phone}
                       placeholder="Name"
                       className="border-[1px] p-[3px] w-[120px] rounded-md border-gray-800 "
                     ></input>
@@ -75,7 +75,7 @@ export default function DriverModal({ setDriverModal, selectedRow }) {
                   <p className="font-semibold"> ID Number</p>
                   <input
                     type="number"
-                    value={selectedRow.id_num}
+                    value={selectedRow?.id_num}
                     placeholder="Name"
                     className="border-[1px] p-[3px] border-gray-800 rounded-md "
                   ></input>
@@ -87,7 +87,7 @@ export default function DriverModal({ setDriverModal, selectedRow }) {
                     <p className="font-semibold">Gender</p>
                     <input
                       type="String"
-                      value={selectedRow.gender}
+                      value={selectedRow?.gender}
                       placeholder="Name"
                       className="border-[1px] p-[3px] w-[60px] rounded-md border-gray-800 "
                     ></input>
@@ -95,7 +95,7 @@ export default function DriverModal({ setDriverModal, selectedRow }) {
                   <div className="m-2 ">
                     <p className="font-semibold"> Email</p>
                     <input
-                      value={selectedRow.email}
+                      value={selectedRow?.email}
                       type="email"
                       placeholder="Name"
                       className="border-[1px] p-[3px] border-gray-800 rounded-md "
@@ -111,7 +111,7 @@ export default function DriverModal({ setDriverModal, selectedRow }) {
                   <p className="font-semibold">Street Address</p>
                   <input
                     type="String"
-                    value={selectedRow.address.street}
+                    value={selectedRow?.address.street}
                     placeholder="Name"
                     className="border-[1px] w-[400px] p-[3px] rounded-md border-gray-800 "
                   ></input>
@@ -121,7 +121,7 @@ export default function DriverModal({ setDriverModal, selectedRow }) {
                     <p className="font-semibold">City</p>
                     <input
                       type="text"
-                      value={selectedRow.address.city}
+                      value={selectedRow?.address.city}
                       placeholder="Name"
                       className="border-[1px] p-[3px]  rounded-md border-gray-800 "
                     ></input>
@@ -130,7 +130,7 @@ export default function DriverModal({ setDriverModal, selectedRow }) {
                     <p className="font-semibold">Zip</p>
                     <input
                       type="number"
-                      value={selectedRow.address.zip}
+                      value={selectedRow?.address.zip}
                       placeholder="Name"
                       className="border-[1px] p-[3px] w-[60px] rounded-md border-gray-800 "
                     ></input>
@@ -175,7 +175,7 @@ export default function DriverModal({ setDriverModal, selectedRow }) {
                     <p className="font-semibold">Expiry Date</p>
                     <input
                       type="Date"
-                      value={selectedRow.license.expiry}
+                      value={selectedRow?.license.expiry}
                       placeholder="Name"
                       className="border-[1px] p-[3px] w-[120px] rounded-md border-gray-800 "
                     ></input>
@@ -198,7 +198,7 @@ export default function DriverModal({ setDriverModal, selectedRow }) {
                     <p className="font-semibold">Code</p>
                     <input
                       type="string"
-                      value={selectedRow.license.code}
+                      value={selectedRow?.license.code}
                       placeholder="Name"
                       className="border-[1px] p-[3px] w-[60px] rounded-md border-gray-800 "
                     ></input>

@@ -1,6 +1,9 @@
 import React from "react";
 
-export default function VehicleModal({ setVehicleModal }) {
+// Images
+import quantum1 from "../../../assets/images/quantum1.jpg"
+
+export default function VehicleModal({ setVehicleModal, selectedRow }) {
   const handleVehicleModalClose = () => {
     setVehicleModal(false);
     console.log("its closed");
@@ -8,279 +11,122 @@ export default function VehicleModal({ setVehicleModal }) {
   return (
     <div className="flex flex-col items-center border-2 bg-white border-green-600 h-[500px] w-[1020px] rounded-2xl">
       <div className="flex flex-col justify-center w-full">
-        <div className="flex items-center font-semibold justify-between m-2 w-[90%]">
-          <h1 className="text-grey-800">Student Information</h1>
-          <button
-            onClick={handleVehicleModalClose}
-            className="bg-red-500 w-[100px] text-white p-1 rounded-md"
-          >
-            Close
-          </button>
+        <h1 className="text-grey-800 m-2 text-2xl font-light">Vehicle Information</h1>
+
+        <div className="flex flex-row items-center justify-around bg-slate-300 h-[320px] rounded-lg m-2 w-[95%] p-2">
+          <div className="h-[280px] w-[380px] rounded-3xl overflow-hidden ">
+            <img src={quantum1} alt="Selected Taxi" className="object-cover" />
+          </div>
+          <div className="flex flex-col items-center text-2xl font-semibold w-[550px] h-[280px]">
+            <div className="flex flex-row items-center justify-between w-[500px]">
+              <p className="w-[300px]">{selectedRow?.detail}</p>
+              <div className="flex items-center font-semibold justify-between m-2">
+                <button
+                  onClick={handleVehicleModalClose}
+                  className="bg-red-500 w-[100px] text-white p-1 rounded-md">
+                  Close
+                </button>
+              </div>
+            </div>
+            <div className="flex flex-col w-[90%] h-[80px]">
+              <div className="flex justify-between w-full">
+
+                <div className="flex-col items-center w-[120px] justify-center m-2">
+                  <p className="text-sm text-center"> Registration</p>
+                  <input
+                    value={selectedRow?.plate_number}
+                    placeholder="Name"
+                    className="border-[1px] text-sm border-gray-800 rounded-md w-[120px] text-center "></input>
+                </div>
+
+                <div className="flex-col items-center w-[200px] justify-center  m-2">
+                  <p className="text-sm text-center"> VIN Number</p>
+                  <input
+                    value={selectedRow?.vin}
+                    placeholder="Name"
+                    className="border-[1px] text-sm border-gray-800 rounded-md w-[200px] text-center "></input>
+                </div>
+                <div className="flex-col items-center w-[120px] justify-center  m-2">
+                  <p className="text-sm text-center"> Driver</p>
+                  <input
+                    value={selectedRow?.driver}
+                    placeholder="Name"
+                    className="border-[1px] text-sm border-gray-800 rounded-md w-[120px] text-center "></input>
+                </div>
+
+              </div>
+              <div className="flex flex-row justify-between w-full">
+
+                <div className="flex-col items-center w-[120px] justify-center m-2">
+                  <p className="text-sm text-center">Routes</p>
+                  <input
+                    value={selectedRow?.route}
+                    placeholder="Name"
+                    className="border-[1px] text-sm border-gray-800 rounded-md w-[120px] text-center "></input>
+                </div>
+
+                <div className="flex-col items-center w-[120px] justify-center  m-2">
+                  <p className="text-sm text-center">Fuel</p>
+                  <input
+                    value={selectedRow?.fuel}
+                    placeholder="Name"
+                    className="border-[1px] text-sm border-gray-800 rounded-md w-[120px] text-center "></input>
+                </div>
+                <div className="flex-col items-center w-[120px] justify-center  m-2">
+                  <p className="text-sm text-center"> Milage</p>
+                  <input
+                    value={selectedRow?.km}
+                    placeholder="Name"
+                    className="border-[1px] text-sm border-gray-800 rounded-md w-[120px] text-center "></input>
+                </div>
+                <div className="flex-col items-center w-[120px] justify-center  m-2">
+                  <p className="text-sm text-center">Seats</p>
+                  <input
+                    value={selectedRow?.seats}
+                    placeholder="Name"
+                    className="border-[1px] text-sm border-gray-800 rounded-md w-[80px] text-center "></input>
+                </div>
+                
+              </div>
+              <div className="flex flex-row justify-between w-full">
+
+                <div className="flex-col items-center w-[100px] justify-center m-2">
+                  <p className="text-sm text-center">Date Added</p>
+                  <input
+                    value={selectedRow?.enrol_date}
+                    placeholder="Name"
+                    className="border-[1px] text-sm border-gray-800 rounded-md w-[100px] text-center "></input>
+                </div>
+
+                <div className="flex-col items-center w-[110px] justify-center  m-2">
+                  <p className="text-sm text-center">Last Service Date</p>
+                  <input
+                    value={selectedRow?.service.last_service_date}
+                    placeholder="Name"
+                    className="border-[1px] text-sm border-gray-800 rounded-md w-[110px] text-center "></input>
+                </div>
+                <div className="flex-col items-center w-[110px] justify-center  m-2">
+                  <p className="text-sm text-center"> Last Service KM</p>
+                  <input
+                    value={selectedRow?.service.last_service_km}
+                    placeholder="Name"
+                    className="border-[1px] text-sm border-gray-800 rounded-md w-[110px] text-center "></input>
+                </div>
+                <div className="flex-col items-center w-[120px] justify-center  m-2">
+                  <p className="text-sm text-center">Next Service KM</p>
+                  <input
+                    value={selectedRow?.service.next_service_km}
+                    placeholder="Name"
+                    className="border-[1px] text-sm border-gray-800 rounded-md w-[120px] text-center "></input>
+                </div>
+
+              </div>
+            </div>
+          </div>
         </div>
+
+       
         <div className=" flex flex-col justify-between h-[420px]">
-          <div className="flex flex-col h-[200px]">
-            <h2>Personal Information</h2>
-            <div className="flex justify-between ">
-              {/* NAME AND DATE */}
-              <div className="h-[175px] bg-gray-100 rounded-md m-[2px]">
-                {/* Full Name  */}
-                <div className="flex">
-                  <div className="m-2 ">
-                    <p className="font-semibold"> Full Name</p>
-                    <input
-                      value={"John Doe"}
-                      placeholder="Name"
-                      className="border-[1px] p-[3px] border-gray-800 rounded-md "
-                    ></input>
-                  </div>
-                  {/* AGE */}
-                  <div className="m-2 ">
-                    <p className="font-semibold">Age</p>
-                    <input
-                      type="number"
-                      value="27"
-                      placeholder="Name"
-                      className="border-[1px] text-center p-[3px] w-[50px] rounded-md border-gray-800 "
-                    ></input>
-                  </div>
-                  {/* -- */}
-                </div>
-                {/* -- */}
-                {/* Enroll Date  */}
-                <div className="flex">
-                  <div className="m-2 ">
-                    <p className="font-semibold">Enroll Date</p>
-                    <input
-                      type="Date"
-                      value="2022-02-14"
-                      placeholder="Name"
-                      className="border-[1px] p-[3px] w-[120px] rounded-md border-gray-800 "
-                    ></input>
-                  </div>
-                  <div className="m-2 ">
-                    <p className="font-semibold">Phone Number</p>
-                    <input
-                      type="number"
-                      value="0712345678"
-                      placeholder="Name"
-                      className="border-[1px] p-[3px] w-[120px] rounded-md border-gray-800 "
-                    ></input>
-                  </div>
-                </div>
-                {/* -- */}
-              </div>
-              <div className="bg-gray-100 rounded-md h-[175px] m-[2px]">
-                {/* ID Number  */}
-                <div className="m-2 ">
-                  <p className="font-semibold"> ID Number</p>
-                  <input
-                    type="number"
-                    value={"9604280485057"}
-                    placeholder="Name"
-                    className="border-[1px] p-[3px] border-gray-800 rounded-md "
-                  ></input>
-                </div>
-                {/* -- */}
-                {/* Enroll Date  */}
-                <div className="flex">
-                  <div className="m-2 ">
-                    <p className="font-semibold">Gender</p>
-                    <input
-                      type="String"
-                      value="Male"
-                      placeholder="Name"
-                      className="border-[1px] p-[3px] w-[60px] rounded-md border-gray-800 "
-                    ></input>
-                  </div>
-                  <div className="m-2 ">
-                    <p className="font-semibold"> Email</p>
-                    <input
-                      value={"John Doe@gamil.com"}
-                      type="email"
-                      placeholder="Name"
-                      className="border-[1px] p-[3px] border-gray-800 rounded-md "
-                    ></input>
-                  </div>
-                </div>
-                {/* -- */}
-              </div>
-              {/* -- */}
-              {/* ADDRRESS LINES */}
-              <div className=" bg-gray-100 rounded-md h-[175px] m-[2px]">
-                <div className="m-2 ">
-                  <p className="font-semibold">Street Address</p>
-                  <input
-                    type="String"
-                    value="123 Madiba Street, Winnie"
-                    placeholder="Name"
-                    className="border-[1px] w-[400px] p-[3px] rounded-md border-gray-800 "
-                  ></input>
-                </div>
-                <div className="flex">
-                  <div className="m-2 ">
-                    <p className="font-semibold">City</p>
-                    <input
-                      type="Date"
-                      value="2022"
-                      placeholder="Name"
-                      className="border-[1px] p-[3px] rounded-md border-gray-800 "
-                    ></input>
-                  </div>
-                  <div className="m-2 ">
-                    <p className="font-semibold">Enroll Date</p>
-                    <input
-                      type="String"
-                      value="Tembisa"
-                      placeholder="Name"
-                      className="border-[1px] p-[3px] rounded-md border-gray-800 "
-                    ></input>
-                  </div>
-                  <div className="m-2 ">
-                    <p className="font-semibold">Zip</p>
-                    <input
-                      type="number"
-                      value="1632"
-                      placeholder="Name"
-                      className="border-[1px] p-[3px] w-[60px] rounded-md border-gray-800 "
-                    ></input>
-                  </div>
-                </div>
-              </div>
-              {/* -- */}
-            </div>
-          </div>
-          {/* DOCCMUNETAION */}
-          <div className="ring h-[200px]">
-            <h4 className="font-bold text-lg">Documentation</h4>
-            <div className="flex justify-between ">
-              {/* NAME AND DATE */}
-              <div className="h-[175px] bg-gray-100 rounded-md m-[2px]">
-                {/* Full Name  */}
-                <div className="flex">
-                  <div className="m-2 ">
-                    <p className="font-semibold"> License Type</p>
-                    <input
-                      value={"Code 10 PrDP"}
-                      placeholder="Name"
-                      className="border-[1px] p-[3px] w-[120px] border-gray-800 rounded-md "
-                    ></input>
-                  </div>
-                  {/* AGE */}
-                  <div className="m-2 ">
-                    <p className="font-semibold">Status</p>
-                    <input
-                      type="string"
-                      value="Learners"
-                      placeholder="Name"
-                      className="border-[1px] text-center p-[3px] w-[100px] rounded-md border-gray-800 "
-                    ></input>
-                  </div>
-                  {/* -- */}
-                </div>
-                {/* -- */}
-                {/* Enroll Date  */}
-                <div className="flex">
-                  <div className="m-2 ">
-                    <p className="font-semibold">Expiry Date</p>
-                    <input
-                      type="Date"
-                      value="2022-02-14"
-                      placeholder="Name"
-                      className="border-[1px] p-[3px] w-[120px] rounded-md border-gray-800 "
-                    ></input>
-                  </div>
-                  <div className="m-2 ">
-                    <p className="font-semibold">PrDP Category</p>
-                    <input
-                      type="string"
-                      value="G, P"
-                      placeholder="Name"
-                      className="border-[1px] p-[3px] w-[120px] rounded-md border-gray-800 "
-                    ></input>
-                  </div>
-                </div>
-                {/* -- */}
-              </div>
-              <div className="bg-gray-100 rounded-md h-[175px] m-[2px]">
-                {/* ID Number  */}
-                <div className="m-2 ">
-                  <p className="font-semibold"> ID Number</p>
-                  <input
-                    type="number"
-                    value={"9604280485057"}
-                    placeholder="Name"
-                    className="border-[1px] p-[3px] border-gray-800 rounded-md "
-                  ></input>
-                </div>
-                {/* -- */}
-                {/* Enroll Date  */}
-                <div className="flex">
-                  <div className="m-2 ">
-                    <p className="font-semibold">Code</p>
-                    <input
-                      type="string"
-                      value="C10"
-                      placeholder="Name"
-                      className="border-[1px] p-[3px] w-[60px] rounded-md border-gray-800 "
-                    ></input>
-                  </div>
-                  <div className="m-2 ">
-                    <p className="font-semibold"> Vehicel Restrictions</p>
-                    <input
-                      value={"None"}
-                      type="email"
-                      placeholder="Name"
-                      className="border-[1px] p-[3px] border-gray-800 rounded-md "
-                    ></input>
-                  </div>
-                </div>
-                {/* -- */}
-              </div>
-              {/* -- */}
-              {/* ADDRRESS LINES */}
-              <div className=" bg-gray-100 rounded-md h-[175px] m-[2px]">
-                <div className="m-2 ">
-                  <p className="font-semibold">Status</p>
-                  <input
-                    type="String"
-                    value="Training For Code 10 Drivers "
-                    placeholder="Name"
-                    className="border-[1px] w-[350px] p-[3px] rounded-md border-gray-800 "
-                  ></input>
-                </div>
-                <div className="flex">
-                  <div className="m-2 ">
-                    <p className="font-semibold">Lessons</p>
-                    <input
-                      type="number"
-                      value="3"
-                      placeholder="Name"
-                      className="border-[1px] p-[3px] w-[70px] rounded-md border-gray-800 "
-                    ></input>
-                  </div>
-                  <div className="m-2 ">
-                    <p className="font-semibold">Account Status</p>
-                    <input
-                      type="String"
-                      value="Fully Paid"
-                      placeholder="Name"
-                      className="border-[1px] p-[3px] rounded-md border-gray-800 "
-                    ></input>
-                  </div>
-                  <div className="m-2 ">
-                    <p className="font-semibold">Balance</p>
-                    <input
-                      type="number"
-                      value="0.00"
-                      placeholder="Name"
-                      className="border-[1px] p-[3px] w-[60px] text-green-700 font-bold rounded-md border-gray-800 "
-                    ></input>
-                  </div>
-                </div>
-              </div>
-              {/* -- */}
-            </div>
-          </div>
         </div>
       </div>
     </div>
